@@ -15,7 +15,7 @@ spring:
         - id: USER-SERVICE
           uri: lb://USER-SERVICE
           predicates:
-            - Path=/user/**
+            - Path=/**
         - id: POST-SERVICE
           uri: lb://POST-SERVICE
           predicates:
