@@ -6,21 +6,21 @@ spring:
     name: API-GATEWAY
   config:
     import: "optional:configserver:"
-    cloud:
-      config:
-        uri: http://localhost:8888
   cloud:
+    config:
+      uri: http://18.136.126.140:8888
+
     gateway:
       routes:
         - id: USER-SERVICE
-          uri: lb://USER-SERVICE
+          uri: http://18.136.126.140:8000
           predicates:
             - Path=/api/**
         - id: USER-SERVICE
-          uri: lb://USER-SERVICE
+          uri: http://18.136.126.140:8000
           predicates:
             - Path=/user/**
         - id: POST-SERVICE
-          uri: lb://POST-SERVICE
+          uri: http://18.142.162.108:8001
           predicates:
             - Path=/post/**
